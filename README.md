@@ -24,7 +24,7 @@ To setup this repo in your local machine you have to follow these steps
 - After that run `python3 manage.py migrate`
 - These two above commands will create tables in your local database (before this create a db named `myinstaapp` using command in psql `CREATE DATABASE myinstaapp;` or you can choose name according to youe need and update it in settings.py)
 - After all these steps run a final command `python3 manage.py runserver`
-- Your applocation should be up and running and you can visit it using link [http://127.0.0.1/8000]|(http://127.0.0.1/8000)
+- Your applocation should be up and running and you can visit it using link [http://127.0.0.1/8000](http://127.0.0.1/8000)
 
 
 
