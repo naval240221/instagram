@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+{{block.super}}
+
+<!-- update_profile.html -->
+<div class="container my-5" style="margin-top: 120px!important;">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h2 class="mb-4">Update Your Profile</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="profile-pic" class="form-label">Profile Picture</label>
+                    <input class="form-control" type="file" id="profile-pic" name="profile_pic">
+                </div>
+                <div class="mb-3">
+                    <label for="profile-avatar" class="form-label">Profile Avatar</label>
+                    <input class="form-control" type="file" id="profile-avatar" name="profile_avatar">
+                </div>
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name"
+                        value="{{ profile.first_name }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name"
+                        value="{{ profile.last_name }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date_of_birth" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ profile.date_of_birth }}">
+                </div>
+                <div class="mb-3">
+                    <label for="bio" class="form-label">Bio</label>
+                    <textarea class="form-control" id="bio" name="bio" rows="3">{{ profile.bio }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" name="gender">
+                      <option value="M" {% if profile.gender == 'M' %}selected{% endif %}>Male</option>
+                      <option value="F" {% if profile.gender == 'F' %}selected{% endif %}>Female</option>
+                      <option value="O" {% if profile.gender == 'O' %}selected{% endif %}>Other</option>
+                      <option value="P" {% if profile.gender == 'P' %}selected{% endif %}>Prefer Not To Say</option>
+                    </select>
+                  </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

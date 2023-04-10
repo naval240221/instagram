@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+{{block.super}}
+<div class="container mt-12" style="margin-top: 120px!important;">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <form method="POST" enctype="multipart/form-data" action="{% url 'create_post' %}">
+                {% csrf_token %}
+                <!-- Post image -->
+                <div class="mb-3">
+                    <label for="id_image" class="form-label">Choose an image to upload</label>
+                    {{ form.image }}
+                </div>
+                <!-- Post caption -->
+                <div class="mb-3">
+                    <label for="id_caption" class="form-label">Write a caption</label>
+                    {{ form.caption }}
+                </div>
+                <!-- Post location -->
+                <div class="mb-3">
+                    <label for="id_location" class="form-label">Add a location</label>
+                    {{ form.location }}
+                </div>
+                <!-- Post tags -->
+                <div class="mb-3">
+                    <label for="id_tags" class="form-label">Add some tags</label>
+                    {{ form.hashtags }}
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load bootstrap5 %}
+{% load utils %}
+{% block content %}
+{% load static %}
+
+<div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{%  static 'instagram.png' %}" alt="Instagram Icon" class="img-fluid" width="90" height="55"
+                    class="d-inline-block align-text-top">
+            </a>
+            {% if request.user.is_authenticated %}
+            <ul class="navbar-nav d-flex flex-row" style="margin-right: 20px;">
+                <!-- <li class="nav-item me-5">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </li> -->
+                <li class="nav-item me-5">
+                    <a type="button" class="btn btn-outline-primary" href="{% url 'create_post' %}">
+                        <i class="fa fa-plus-circle" aria-hidden="true">&nbsp;&nbsp;Create</i>
+                    </a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link text-black" href="{% url 'profile' user.username %}">
+                        <img src="{{ user|get_profile_image_url }}" class="rounded-circle me-2" width="30" height="30">
+                    </a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link text-black" class="btn btn-outline-primary" href="{% url 'logout' %}">
+                        <i class='fas fa-sign-out-alt fa-x'>&nbsp;Sign Out</i>
+                    </a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </nav>
+</div>
+{% endblock %}

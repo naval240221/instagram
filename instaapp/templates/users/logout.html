@@ -1,0 +1,48 @@
+{%extends "registration/base.html"%} {% load bootstrap5 %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="logincont">
+        <!-- Image beside Login-Form -->
+        
+        <div class="loginimage">
+            <img src="{%  static 'instagram.png' %}" alt="Instagram Icon" class="img-fluid"
+					style="width: 55%; height: 90px;">
+        </div>
+        
+        <!-- Output to Display error in login -->
+        <div class="loginform">
+            {% if form.errors %}
+            <p > Password or Username is incorrect </p>
+            {% endif %}
+            <!--Collapse Output to Display error in login -->
+        
+
+            <!-- BootStrap class to add border to login form -->
+            <div  class="panel panel-default">
+
+                <!-- Instagram image at the top of Login form -->
+                <img src="{%  static 'instagram.png' %}" alt="Instagram Icon" class="img-fluid"
+                    style="width: 55%; height: 90px;">
+                 <div class="panel-body">
+                     
+                    
+                    <!--Collaplse Instagram image at the top of Login form -->
+
+                    <h1><strong>You Are Signed</strong></h1>
+                    <!-- Signup Button Next to (Do you have an account)! -->
+                    <div style="margin-top: 10%" class="panel-heading">
+                        <p class="_g9ean pull-left">Want to have an account?</p>
+                        <a href="/u/signup/" class="btn btn-primary btn-sm pull-right">Sign Up</a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+
+    </div>
+
+           
+</div>
+
+{% endblock %}
