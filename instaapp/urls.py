@@ -14,8 +14,8 @@ from .views import *
 urlpatterns = [
     path('', home, name='home'),
     path('login/', login_view, name='login'),
-    path('explore', explore, name ='explore'),
-    path('notification', notification, name ='notification'),
+    path('explore', explore, name ='explore'),  ## WIP
+    path('notification', notification, name ='notification'), ## WIP
     path('profile/update/', update_profile, name='update_profile'),
     path('profile/<str:user_id>/', profile, name='profile'),
     path('followings/<str:user_id>', followings, name='followings'),
