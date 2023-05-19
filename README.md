@@ -49,19 +49,12 @@ To setup this repo in your local machine you have to follow these steps
 
 ## Visit Your profile by clicking profile icon
 
-![userprofile](https://user-images.githubusercontent.com/128895452/231015049-cae2e7d9-1580-49eb-8642-ef95faa7652f.jpg)
-
-
-
 ## Edit Profile (Click On Edit Profile Button)
 
 ![updateprofile](https://user-images.githubusercontent.com/128895452/231014925-167de953-bedc-4288-8367-baeaf1084cd4.jpg)
 
 
 ## See Followers and Followings
-
-![followersandfollowings](https://user-images.githubusercontent.com/128895452/231014967-872645ee-b06f-4083-8576-e382b06ff43c.jpg)
-
 
 ## View Comments
 
